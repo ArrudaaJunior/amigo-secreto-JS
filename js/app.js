@@ -7,6 +7,11 @@ function adicionar() {
         return;
     }
 
+    if (amigos.includes(amigo.value)) {
+        alert('Nome já foi adicionado!');
+        return;
+    }
+
     let listaAmigos = document.getElementById('lista-amigos');
     amigos.push(amigo.value);
 
@@ -16,9 +21,6 @@ function adicionar() {
         listaAmigos.textContent = listaAmigos.textContent + ', ' + amigo.value;
     }
     amigo.value = '';
-
-    atualizarLista();
-    atualizarSorteio();
 }
 
 function sortear() {
