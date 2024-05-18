@@ -2,6 +2,11 @@ let amigos = [];
 
 function adicionar() {
     let amigo = document.getElementById('nome-amigo');
+    if (amigo == '') {
+        alert('Digite o nome do amigo!');
+        return;
+    }
+    
     let listaAmigos = document.getElementById('lista-amigos');
     amigos.push(amigo.value);
 
@@ -55,7 +60,6 @@ function atualizarLista() {
     let lista = document.getElementById('lista-amigos');
     lista.innerHTML = '';
 
-
     for (let i = 0; i < amigos.length; i++) {
         // Cria um elemento de parágrafo para cada amigo
         let paragrafo = document.createElement('p');
@@ -65,7 +69,6 @@ function atualizarLista() {
         paragrafo.addEventListener('click', function() {
             excluirAmigo(i);
         });
-
 
         // Adiciona o parágrafo à lista
         lista.appendChild(paragrafo);
